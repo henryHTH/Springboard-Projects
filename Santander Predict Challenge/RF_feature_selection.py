@@ -17,8 +17,8 @@ from EDA_function import EDA
 from pprint import pprint
 from math import sqrt
 
-def EDA(file_name,data_fraction):
-    print('version 1')
+def EDA(file_name,data_fraction=None):
+    print('version 2')
     if data_fraction is None:
         data = pd.read_csv(file_name)
     else:
