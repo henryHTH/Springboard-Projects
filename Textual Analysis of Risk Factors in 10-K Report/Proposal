@@ -1,0 +1,29 @@
+Problem Statement
+
+Nowadays hedge funds and asset managements takes risk management more and more important. And among which, market risk management is one of the biggest topic. Currently, factor models are mainly implemented in this area, so the portfolio managers would know the market risk level as well as where the risk comes from. Since the famous Three Factor Model of Fama and French was introduced in 1993, increasing number of factors have been applied in order to get better understanding of the relationship between return and risk factors. However, the formidable challenge comes in interpreting the economically relevant risk factors. In this project, an approach to this challenge is proposed by eliciting the risk factors that firms themselves identify in their annual reports. 
+
+
+Possible Clients
+
+Risk factors are directly derived from the statement of companies’s annual reports and no returns or any numeric factors are used. Since there are not many researches about using the 10-K textual data to construct a factor model, the concerns about data mining or p-hacking should be minimal. In addition, instead of defining some risk factors or characteristics that seem subjectively important, risk factors which directly from the firms are stated by the ones that best understand the risks the they face. Finally, the factors unambiguously represent economic risk faced by the companies. 
+Thus, both institutional and individual investors can be benefit from this project, since a new approach to identify and interpreting risk factors is proposed.
+
+
+Dataset
+
+The data are from 10-K annual report in EDGAR database of SEC. Companies are legally required to to discuss ”the most significant factors that make the company speculative or risky” (Regulation S–K, Item 305(c), SEC 2005) in a specific section of the 10-K annual reports (Section 1A). 
+
+Finance statement data are also from EDGAR database of SEC. (I have applied CRSP and Compustat access, but the data is also available from SEC). For the monthly return data, it is available in Yahoo Finance and Quandl)
+
+The Five Factors of Fama and French (2015), the momentum factor, and the one-month Treasury-bill rate come from the French data library on Ken French’s website. The Stambaugh and Yuan (2017) factors come from their website. The q-factors of Hou, Xue, and Zhang (2015) come from their website. 
+
+
+Solution
+
+Extract the risks that companies disclose from the 10-K Annual reports using Latent Dirichlet Allocation (LDA),10 a technique developed in the machine learning literature. LDA is a topic modelling technique that summarizes the risks that firms are concerned about, and how much time each company spends discussing each risk.11 With the additional assumption that if a company spends a longer time discussing a specific risk, they are more exposed to that risk,12 we can quantify how much each firm is exposed to each type of risk. 
+
+
+
+Deliverable
+
+The deliverable will contain the model code and an explanation paper of my work.
