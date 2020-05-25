@@ -10,39 +10,20 @@ class lda_model():
         self.output_path = r'~/output/all_data'
         self.model_path = r'~/output/models'
 
-        self.raw_file_path = join(self.data_path,'all_txt_file.txt')
-        self.cleaned_filepath = join(self.data_path,'all_txt_file_cleaned.txt')
+        self.raw_file_path = join(self.data_path,'smaple_text_file.txt')
+        self.cleaned_filepath = join(self.data_path,'smaple_text_file_cleaned.txt')
         
-        self.bigram_txt_filepath = join(self.output_path,'all_text_bigram_trans.txt')
-        self.bigram_model_filepath = join(self.output_path,'bigram_model_all')
+        self.bigram_txt_filepath = join(self.output_path,'sample_text_bigram_trans.txt')
+        self.bigram_model_filepath = join(self.output_path,'bigram_model_sample')
         
-        self.trigram_txt_filepath = join(self.output_path,'all_text_trigram_trans.txt')
-        self.trigram_model_filepath = join(self.output_path,'trigram_model_all')
+        self.trigram_txt_filepath = join(self.output_path,'sample_text_trigram_trans.txt')
+        self.trigram_model_filepath = join(self.output_path,'trigram_model_sample')
         
-        self.dictionary_filepath = join(self.output_path,'dict_all.dict')
-        self.corpus_filepath = join(self.output_path,'corpus_all.mm')
+        self.dictionary_filepath = join(self.output_path,'dict_sample.dict')
+        self.corpus_filepath = join(self.output_path,'corpus_sample.mm')
         
         #self.lda_model_filepath = join(self.output_path, 'lda_model_all')
-        '''
-
-        self.data_path = r'/Users/henry/Documents/study/Springboard/nlp_project/data'
-        self.output_path = r'/Users/henry/Documents/study/Springboard/nlp_project/models/oneline'
-
-        self.raw_file_path = join(self.data_path,'oneline.txt')
-        self.cleaned_filepath = join(self.data_path,'oneline_cleaned.txt')
-        
-        self.bigram_txt_filepath = join(self.output_path,'oneline_bigram_trans.txt')     
-        self.bigram_model_filepath = join(self.output_path,'oneline_bigram_model_all')
-        
-        self.trigram_txt_filepath = join(self.output_path,'oneline_trigram_trans.txt')
-        self.trigram_model_filepath = join(self.output_path,'oneline_trigram_model_all')
-        
-        self.dictionary_filepath = join(self.output_path,'oneline_dict.dict')
-        self.corpus_filepath = join(self.output_path,'oneline_corpus.mm')
-        
-        self.lda_model_filepath = join(self.output_path, 'oneline_lda_model')
-        '''
-
+      
         self.stopwords_ = set(['include','use','risk','factor','subject','relate','result','associate','s','significant',
              'substantial','successful','additional','report','statement','maintain','provide','evaluate',
              'annual','disclosure','identify','assessment','obtein','tax','income','million','$','December_31',
@@ -292,7 +273,7 @@ class lda_model():
 if __name__ == '__main__':
     
     topic_number = 25
-    model = lda_model(topic_number)
+    model = lda_model()
     #model.run(1)
     
     #model.run(1)
