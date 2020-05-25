@@ -243,10 +243,10 @@ class lda_model():
 
         
         print(f'clean_raw_data,run_or_load_flag = {run_or_load_flag}')
-        self.clean_raw_data(0)
+        self.clean_raw_data(run_or_load_flag)
         
         print(f'train_bigram_model,run_or_load_flag = {run_or_load_flag}')
-        self.bigram_model = self.train_bigram_model(0)
+        self.bigram_model = self.train_bigram_model(run_or_load_flag)
         
         print(f'bigram_transform,run_or_load_flag = {run_or_load_flag}')
         self.bigram_transform(run_or_load_flag)
