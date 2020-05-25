@@ -240,7 +240,6 @@ class lda_model():
 
 
     def run(self,run_or_load_flag):
-
         
         print(f'clean_raw_data,run_or_load_flag = {run_or_load_flag}')
         self.clean_raw_data(run_or_load_flag)
