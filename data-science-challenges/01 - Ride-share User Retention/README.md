@@ -1,0 +1,4 @@
+This is the Take-Home challenge for Springboard called the **Ultimate Data Science Challenge**. The texts in *purple* are the questions and the answers are in plain text. The inferential **Insights** are highlighted in **cyan**.
+
+**Please Note**:<br>
+The *Ride-share Data Analysis.ipynb* notebook contains HTML tags that GitHub prevents from displaying due to security reasons (see [Issue #1672](https://github.com/BoostIO/Boostnote/issues/1672)). In order to properly view the notebook in its entirety — including the important **Insights** annotations — please click on the following link for the notebook as rendered by the [Jupyter *nbviewer*](https://nbviewer.jupyter.org/github/louiefb/data-science-challenges/blob/master/01%20-%20Ride-share%20User%20Retention/Ride-share%20Data%20Analysis.ipynb).
