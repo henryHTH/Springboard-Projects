@@ -3,11 +3,13 @@ import re
 import os
 from os import listdir
 from os.path import isfile, join
+import datetime
+import time
 
 # Importing libraries you need to install
 import pandas as pd
 import numpy as np
-from tqdm import tqdm
+#from tqdm import tqdm
 import itertools as it
 
 import nltk
@@ -24,6 +26,7 @@ from gensim.models import Phrases
 from gensim.models.word2vec import LineSentence
 from gensim.parsing.preprocessing import remove_stopwords
 from gensim.models.ldamulticore import LdaMulticore
+from gensim.models import LdaModel
 from gensim.models import CoherenceModel
 
 from wordcloud import WordCloud,STOPWORDS
@@ -44,6 +47,13 @@ def punct_space(token):
 	
 	return token.is_punct or token.is_space 
 
+def remove_stop(token):
+	"""
+	helper function to eliminate tokens
+	that are pure punctuation or whitespace
+	"""
+	
+	return token.is_stop
 
 def line_review(filename):
 	"""
@@ -64,9 +74,7 @@ def lemmatized_sentence_corpus(filename,nlp):
 	
 	for parsed_review in nlp.pipe(line_review(filename),batch_size=100, n_process=4):
 		for sent in parsed_review.sents:
-			print("**************************")
-			yield u' '.join([token.lemma_ for token in sent if not punct_space(token)])
-	print("##################################")
+			yield u' '.join([token.lemma_.lower() for token in sent if not punct_space(token)])
 
 
 def trigram_bow_generator(filepath,dictionary):
@@ -91,7 +99,7 @@ def explore_topic(lda,topic_number, topn=20):
 		print (u'{:20} {:.3f}'.format(term, round(frequency, 3)))
 	
 		
-def topic_visualizer(lda,topic_number, topn=30):
+def topic_visualizer(lda,topic_number, topn=20):
 	"""
 	print out a wordcloud figure of the top terms 
 	for the picked toptic
@@ -103,14 +111,14 @@ def topic_visualizer(lda,topic_number, topn=30):
 
 	cloud = WordCloud(stopwords=stop_words,
 				  background_color='white',
-				  width=2500,
-				  height=1800,
+				  width=250,
+				  height=180,
 				  max_words=topn,
-				  prefer_horizontal=1.0)
+				  prefer_horizontal=0.8)
 	
-	cloud.generate_from_frequencies(dict_topic, max_font_size=300)
+	cloud.generate_from_frequencies(dict_topic, max_font_size=30)
 	
-	plt.figure(figsize = (8, 8), facecolor = None) 
+	plt.figure(figsize = (3, 3), facecolor = None) 
 	plt.imshow(cloud) 
 	plt.axis("off") 
 	plt.tight_layout(pad = 0) 
