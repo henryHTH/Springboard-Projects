@@ -87,7 +87,7 @@ smart-open==2.0.0
 spacy @ file:///Users/runner/miniforge3/conda-bld/spacy_1589387632332/work
 srsly @ file:///Users/runner/miniforge3/conda-bld/srsly_1589222440335/work
 tensorboard==2.0.1
-tensorflow==2.0.0
+tensorflow==2.5.0
 tensorflow-estimator==2.0.1
 termcolor==1.1.0
 textblob==0.15.3
